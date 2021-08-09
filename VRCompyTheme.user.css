@@ -1,0 +1,775 @@
+/* ==UserStyle==
+@name           VRCompy App Theme
+@namespace      https://github.com/VRSquid/VRCopmy-VRC-Home
+@version        1.0.0
+@description    A style which aims to fix a few issues with the VRChat home website, and theme it like my mobile app, 'VRCompy'
+@author         VRSquid
+==/UserStyle== */
+
+
+
+@-moz-document url-prefix("https://vrchat.com/home/launch") {
+    body {
+        background: var(--loadingButtonBackground3) !important;
+        overflow-y: scroll !important;
+    }
+    
+    .home{
+        color: var(--buttonPrimary) !important;
+        border-radius: 5rem;
+        border: 4px solid var(--loadingBottom);
+        font-weight: bold;
+        padding: 4px 10px;
+    }
+    
+    .home::before{
+        content: "\f015  ";
+        font-family: "Font Awesome 5 Free";
+    }
+    
+    .world-users{
+        background: var(--buttonPrimary) !important;
+    }
+    
+    .navbar{
+        pointer-events: auto !important;
+    }
+}
+
+@-moz-document url-prefix("https://vrchat.com/home") {
+    
+    .row{
+        margin: 0;
+    }
+    
+    .col-md-4{
+        padding: 0;
+        max-width: none;
+    }
+    
+    .user-bio{
+        width: auto !important;
+    }
+    
+    .btn-group-lg.btn-group-vertical{
+        min-width: 195px;
+    }
+    
+    body {
+        /*var names are copied from my app. Those that start with 'loading' are named so as they are sampled from loading screen screenshots.*/
+        --OnlineGreenPrimary: #67d781;
+        --OnlineGreenSecondary: #499c5f;
+        --JoinMePrimary: #458cff;
+        --BusyPrimary: #fc3f3f;
+        --BusySecondary: #cf1313;
+        --AskMePrimary: #fd7e14;
+        --AskMeSecondary: #f79b4e;
+        --OfflinePrimary: #a1a1a1;
+        --OfflineSecondary: #6e6e6e;
+        --labs: #2aCa5a;
+        --buttonPrimary: #0e9bb1;
+        --loadingTop: #003d40;
+        --loadingBottom: #023234;
+        --loadingParticle: #104649;
+        --loadingButtonBackground: #012324;
+        --loadingButtonBackground2: #01191B;   
+        --loadingButtonBackground3: #002122;
+        --greenSuccess: #94ffad;
+        --blueInfo: #7eabf3;
+        --redDanger: #ee5454;
+        
+        background: var(--loadingButtonBackground3) !important;
+        overflow: hidden;
+    }
+    
+    .img-rounded{
+        background: var(--loadingButtonBackground);
+        border: 4px solid var(--loadingBottom);
+        border-radius: 1rem !important;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    
+    .text-warning:before{
+        color: var(--BusyPrimary);
+    }
+    
+    .btn{
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    
+    .btn-group-vertical{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    .btn-group-vertical .btn{
+        margin-bottom: 8px;
+        background: var(--loadingButtonBackground);
+        border: 3px solid var(--loadingParticle);
+        border-radius: 20rem !important;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }  
+    
+    .btn-secondary:hover{
+        background: var(--loadingBottom);
+        border-radius: 5rem;
+    }
+    
+    .btn-outline-primary{
+        color: var(--buttonPrimary);
+        border-radius: 5rem;
+        border: 4px solid var(--loadingBottom);
+    }
+    
+    .btn-outline-primary.disabled:hover{
+        border-color:var(--loadingBottom);
+    }
+    
+    .leftbar .friendRequest{
+        display: none;
+    }
+    
+    .btn[title="Push Notifications"]{
+        font-size: 0;
+    }
+    
+    .btn[title="Push Notifications"] span{
+        font-size: 1.1rem;
+        margin: 0 3px;
+    }
+    
+    .btn-warning{
+        background: var(--loadingButtonBackground);
+        border-radius: 5rem;
+        border: 4px solid var(--AskMePrimary) !important;
+        color: var(--AskMePrimary);
+    }
+    
+    .btn-warning:hover{
+        background: var(--loadingBottom);
+        border-radius: 5rem;
+        border: 4px solid var(--AskMeSecondary);
+        color: var(--AskMeSecondary);
+    }
+    
+    .btn-success{
+        background: var(--loadingButtonBackground);
+        border-radius: 5rem;
+        border: 4px solid var(--OnlineGreenPrimary) !important;
+        color: var(--OnlineGreenPrimary);
+    }
+    
+    .btn-success:hover{
+        background: var(--loadingBottom);
+        border-radius: 5rem;
+        border: 4px solid var(--greenLight);
+        color: var(--greenLight);
+    }
+    
+    .search .btn-outline-secondary{
+        background: var(--loadingButtonBackground);
+        border-radius: 5rem;
+        border: 4px solid var(--loadingBottom);
+        color: var(--buttonPrimary);
+    }
+    
+    .search .navbar-form{
+        height: 67px;
+        box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.30);
+        background: var(--loadingParticle);
+        padding: 10px 10px 0 10px;
+        border-bottom-left-radius: 1.8rem;
+        border-bottom-right-radius: 1.8rem;
+        border: 4px solid var(--loadingBottom);
+        border-top: 0;
+        color: var(--buttonPrimary);
+    }
+    
+    .search .form-control[type="text"]{
+        min-height: 44px;
+        border-top-left-radius: 5rem;
+        border-bottom-left-radius: 5rem;
+    }
+    
+    .navbar .container-fluid .search{
+        
+        margin-top: 0;
+        width: 100%;
+        pointer-events: none;
+    }
+    
+    .btn-primary, .launch-btn{
+        background: var(--loadingButtonBackground) !important;
+        border: 4px solid var(--loadingBottom) !important;
+        border-radius: 5rem;
+        color: var(--buttonPrimary) !important;
+        font-weight: bold;
+    }
+    
+    .btn-primary.disabled, .btn-primary:disabled{
+        background: var(--loadingButtonBackground);
+        border: 4px solid var(--loadingBottom);
+        border-radius: 5rem;
+        color: var(--buttonPrimary);
+        font-weight: bold;
+        opacity: 0.5;
+    }
+    
+    .btn-primary:hover{
+        color: var(--buttonPrimary) !important;
+        background: var(--loadingBottom) !important;
+        border: 4px solid var(--loadingParticle) !important;
+    }
+    
+    a[href="/home/uploadIcon"] .btn-secondary{
+        width: 8em;
+    }
+    
+    .bg-primary{
+        background-color: transparent !important;
+        box-shadow: 0 0 transparent !important;
+    }
+    
+    .btn-secondary{
+        background: var(--loadingButtonBackground);
+        border-radius: 5rem;
+        color:#FFF;
+        border: 4px solid var(--OfflineSecondary);
+    }
+    
+    .btn-outline-danger{
+        background: var(--loadingButtonBackground);
+        border-radius: 5rem;
+        color: var(--BusyPrimary);
+        border: 4px solid var(--BusySecondary);
+    }
+    
+    .user-languages .btn-outline-danger{
+        min-width: 48px;
+        min-height: 48px;
+    }
+    
+    /*This is the dumbest selector I've ever written. It's to add spacing to the 'Edit' button on world pages where the style is done inline on the element.
+    I add the radius back in the above selector, so this is to add spacing to the menu bellow or it looks bad.*/
+    .home-content .flex-column.btn-group>.btn:not(:last-child):not(.dropdown-toggle), .btn-secondary[style="border-radius: 0px;"]{
+        margin-bottom: .5rem;
+        border-radius: 5rem !important;
+    }
+    
+    .btn-danger{
+        background: var(--loadingButtonBackground);
+        border-radius: 5rem;
+        color: var(--BusyPrimary);
+        border: 4px solid var(--BusySecondary) !important;
+    }
+    
+    .btn-danger:hover{
+        background: var(--loadingBottom);
+        border-radius: 5rem;
+        color: var(--redDanger);
+        border: 4px solid var(--BusyPrimary);
+    }
+    
+    .navbar{
+        padding-top: 0 !important;
+        pointer-events: none;
+    }
+    
+    .navbar .container-fluid{
+        margin: auto;
+        text-align: center;
+        margin-right: 110px;
+    }
+    
+    .navbar .container-fluid .navbar-form{
+        width: 50% !important;
+        margin: auto;
+        text-align: center;
+        pointer-events: auto;
+    }
+    
+    .navbar .container-fluid .navbar-header{
+        position: fixed;
+        top: 15px;
+        left: 67px;
+        pointer-events: auto;
+    }
+    
+    .navbar .container-fluid .navbar-header .btn[title="logout"]{
+        color: var(--BusyPrimary);
+        border: 3px solid var(--BusySecondary);
+    }
+    
+    .badge{
+        background-color: var(--buttonPrimary);
+    } 
+    
+    .profile-link{
+        width: 53px !important;
+        height: 53px !important;
+        padding: 0 !important;
+    }
+    
+    .profile-link > a{
+        font-size: 0;
+        border-radius: 50%;
+        height: 100%;
+        padding: 5px !important;
+    }
+    
+    .profile-link > a span{
+        padding-top: 4px !important;
+    }
+    
+    .profile-link > a span::before{
+        font-size: 1.7rem;
+    }
+    
+    .container-fluid .d-md-block{
+        display: none !important;
+    }
+    
+    .rightbar .card.state-offline{
+        background: var(--loadingBottom);
+        opacity: 0.5;
+    }
+    
+    .card{
+        border: 4px solid var(--loadingBottom);
+        background-size: contain !important;
+        background-repeat: no-repeat;
+        border-radius: 1rem !important;
+    }
+    
+    .card.box-shadow{
+        border: 4px solid var(--loadingBottom);
+    } 
+    
+   .card:not(.section-bg){
+        background: var(--loadingTop) !important;
+    }
+    
+    h3{
+        font-weight: bold;
+    }
+    
+    label{
+        font-weight: bold;
+    }
+    
+    .nav{
+        background: var(--loadingTop);
+        border-radius: 5rem;
+        border: 4px solid var(--loadingBottom);
+        margin-bottom: 4px;
+    }
+    
+    .nav-item a{
+        font-weight: bold;
+        font-size: 1rem
+    }
+    
+    .nav-tabs .nav-item{
+        margin-bottom: 0;
+    }
+    
+    .nav-tabs .nav-link.active{
+        color: var(--buttonPrimary);
+        border-radius: 20rem;
+        background-color: var(--loadingButtonBackground2);
+        border: 3px solid var(--loadingBottom);
+    }
+    
+    .nav-link{
+        color: var(--OfflinePrimary);
+    }
+    
+    #login-form-submit{
+        width: 100%;
+    }
+    
+    .subheader{
+        display: none;
+    }
+    
+    .user-img-16x9{
+        width:176px;
+        height:176px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    
+    .card .user-img-16x9, .card .user-img{
+        width: 100px !important;
+        height: 100px !important;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    
+    .leftbar .usercard{
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .leftbar .usercard.state-offline{
+        opacity: 1 !important;
+    }
+    
+    .leftbar .usercard>div{
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .leftbar .card .user-img-16x9, .leftbar .card .user-img{
+        width: 150px !important;
+        height: 150px !important;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 15px !important;
+    }
+    
+    .rightbar .user-img-16x9, .rightbar .user-img{
+        width: 75px !important;
+        height: 75px !important;
+        border-radius: 50%;
+        margin: 0 !important;
+        object-fit: cover;
+    }
+    
+    .size-huge .user-img-16x9, .size-huge .user-img{
+        min-width: 288px !important;
+        min-height: 288px !important;
+        border-radius: 50%;
+        margin: 0;
+        object-fit: cover;
+    }
+    
+    .offlineOrOnlineOrWhatever{
+        display: none;
+    }
+    
+    .size-wide .user-img-16x9, .size-wide .user-img{
+        width: 70px !important;
+        height: 70px !important;
+        margin-left: 115px;
+    }
+    
+    
+    
+    .usercard{
+        padding: 20px !important;
+    }
+    
+    .leftbar .usercard{
+        text-align: center;
+        
+    }
+    
+    .leftbar .usercard .statusDescription > small{
+        font-size: 1rem !important;
+    }
+    
+    .rightbar{
+        position: fixed !important;
+        top:0;
+        right: 0;
+        padding: 0;
+        background: #003538 !important;
+        padding-top: 0px !important;
+        padding-bottom: 0 !important;
+        width: 400px;
+        min-width: 400px;
+        margin-left:auto;
+        box-shadow: 5px 0px 20px 20px rgba(0,0,0,0.1) !important;
+        border-left: 5px solid var(--loadingButtonBackground2);
+    }
+    
+    .card.section-bg{
+        width: 665px;
+        height: 500px;
+        margin: auto;
+    }
+    
+    .container{
+        width: 75% !important;
+        padding: 0;        
+    }
+    
+    .container-fluid .row{
+        flex-direction: row; 
+    }
+    
+    .leftbar{
+        background: linear-gradient(130deg, var(--loadingButtonBackground) 10%, var(--loadingParticle) 100%, var(--loadingTop) 100%) !important; 
+        padding-top: 75px !important;
+        min-width: 290px;
+        width:290px;
+        box-shadow: 5px 0px 20px 20px rgba(0,0,0,0.1) !important;
+        border-right: 5px solid var(--loadingButtonBackground2);
+    }
+    
+    #secondary-nav{
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        z-index: 100;
+    }
+    
+    .container-fluid .row > .col-lg-7{
+        position: fixed !important;
+        height: 100%;
+        overflow-y: auto;
+        padding-top: 70px;
+        margin: 0 !important;
+        border-right: 400px solid transparent;
+        border-left: 290px solid transparent;
+        min-width: 100%;
+        left:0;
+        top:0;
+        background: var(--loadingButtonBackground3) !important;
+    }
+    
+    .home-content{
+        max-width: 2000px;
+        height: auto;
+        margin: 0 auto;
+        padding: 10px;
+        position: relative;
+    }
+    
+    .home-content .text-center .btn-group{
+       display: none;
+    }
+    
+    .rightbar .img-thumbnail[src="https://assets.vrchat.com/www/images/default_private_image.png"]{
+        display: none;
+    }
+    
+    .rightbar .img-thumbnail[src="https://assets.vrchat.com/www/images/default_private_image.png"]::before{
+        display: block;
+        content: "butts";
+    }
+    
+    .rightbar .location-img{
+        display: none;
+    }
+    
+    .rightbar>div{
+        margin-top: 0px !important;
+    }
+    
+    .rightbar .location-title{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding-bottom: 0 !important;
+        margin-bottom: 0;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
+    
+    .home-content .location-card.size-large .usercard .user-img, .location-card.size-large .usercard .user-img-16x9{
+        width: 50px !important;
+        height: 50px !important;
+    }
+    
+    .home-content .location-card.size-large .usercard .user-info{
+        vertical-align: middle;
+        display: table-cell;
+    }
+    
+    .home-content .location-card.size-large .usercard .lastLogin{
+        display: none;
+    }
+    
+    .home-content .location-card.size-large .usercard{
+        padding: 0 !important;
+    }
+    
+    .home-content .location-card.size-large{
+        padding: 5px 10px 0 10px !important;
+    }
+    
+    .location-container .user-img, .location-container .user-img-16x9{
+        margin-left: 5px !important;
+        margin-top: 4.8px !important;
+    }
+    
+    .friend-container{
+        width: 100% !important;
+    }
+    
+    .friend-container > h3{
+        /*position: fixed;*/
+        padding: 5px;
+        
+    }
+    
+    .friend-container > div:first-of-type{
+        /*position: fixed;*/
+        border-radius: 5rem !important;
+        padding: 0 5px;
+    }
+    
+    .friend-container > div > input{
+        border-radius: 5rem;
+        border: 0;
+        padding: 0 10px;
+    }
+    
+    .friend-container > div > hr{
+        margin: 10px 0;
+    }
+    
+    .rightbar > div{
+        height: 100%;
+    }
+    
+    #login-form hr{
+        border-top: 1px solid transparent;
+    }
+    
+    .usercard{
+        padding: 10px !important;
+    }
+    
+    .language-display-public{
+        border-radius: 5rem !important;
+    }
+    
+    .user-bio-links .btn-secondary{
+        height: 48px;
+        width: 48px;
+        padding-left: 10px;
+    }
+    
+    .user-bio-links .w-100:not(.btn-group) .btn-secondary{
+        height: auto;
+        width: auto;
+    }
+    
+    
+    /*SEARCH CONTAINER STYLES
+    Styles that containt the public and private classes will only affect world and avatar search containers. This is done so that these styles do not affect user searches.*/
+    .private.search-container, .public.search-container{
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: var(--loadingButtonBackground);
+        border: 5px solid var(--loadingBottom) !important;
+        border-radius: 1.2rem;
+        box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, .3) !important;
+        color: var(--buttonPrimary);
+        font-weight: bold;
+    }
+    
+    .search-container.system_labs, .search-container.system_labs img{
+        border-color: var(--labs) !important;
+    }
+    
+    .search-container.system_labs.slim>.row>div:first-of-type{
+        border-color: var(--labs) !important;
+        border-right: 4px solid transparent !important;
+        border-left: 4px solid transparent !important;
+    }
+    
+    .search-container>.row>div:first-of-type{
+        background: transparent;
+
+        color: var(--buttonPrimary);
+        font-weight: bold;
+    }
+    
+    .search-container.slim>.row>div:first-of-type{
+        margin-bottom: 10px;
+        border-bottom: 4px solid var(--loadingBottom) !important;   
+        border-right: 4px solid transparent !important;
+        border-left: 4px solid transparent !important;
+    }
+    
+    .private.search-container img, .public.search-container img{
+        background: var(--loadingButtonBackground);
+        border: 4px solid var(--loadingBottom);
+        border-radius: 1rem !important;
+    }
+    
+    .private.search-container>div, .public.search-container>div{
+        margin: 0 -15px !important;
+    }
+    
+    /*END SEARCH CONTAINER STYLES*/
+    
+
+    /*ALERT STYLES*/
+    .alert{
+        font-weight: bold;
+        background: var(--loadingTop);;
+        border-radius: 1.2rem;
+    }
+    
+    .alert-info{
+        color: var(--blueInfo);
+        border: 3px solid var(--JoinMePrimary);
+    }
+    
+    .alert-warning{
+        color: var(--BusyPrimary);
+        border: 3px solid var(--BusySecondary);
+    }
+    
+    .alert-success{
+        color: var(--OnlineGreenPrimary);
+        border: 3px solid var(--OnlineGreenSecondary);
+    }
+    /*END ALERT STYLES*/
+    
+    .location-users .row{
+        margin: 0;
+    }
+    
+    @media(min-width:1900px){
+        .location-users>div {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    
+    @media(max-width:1900px){
+        .location-users>div {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    
+    @media(max-width:1500px){
+        .location-users>div {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+    
+    .location-users>div {
+        display: grid;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+    }
+    
+    .location-users>div div{
+        height: 64px;
+        margin-bottom: 5px;
+        padding: 0 1px;
+    }
+    
+    .animated.fadeIn.card.border-danger{
+        margin-top: 10px;
+    }
+    
+    #merge-form{
+        background: var(--loadingTop);
+        border-radius: 1rem;
+        border: 3px solid var(--loadingBottom);
+        padding: 10px;
+    }
+   
+}
