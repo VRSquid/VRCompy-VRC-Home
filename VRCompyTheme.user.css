@@ -773,3 +773,9 @@
     }
    
 }
+
+@-moz-document url("https://vrchat.com/home/login") {
+    .col-md-4{
+        max-width: 33.33333%;
+    }
+}
