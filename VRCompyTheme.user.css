@@ -12,6 +12,7 @@
     body {
         background: var(--loadingButtonBackground3) !important;
         overflow-y: scroll !important;
+        font-family: "Dosis",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif
     }
     
     .home{
@@ -168,7 +169,7 @@
     
     .search .btn-outline-secondary{
         background: var(--loadingButtonBackground);
-        border-radius: 5rem;
+        border-radius: 0 5rem 5rem 0;
         border: 4px solid var(--loadingBottom);
         color: var(--buttonPrimary);
     }
@@ -215,7 +216,7 @@
         opacity: 0.5;
     }
     
-    .btn-primary:hover{
+    .btn-primary:not(.disabled):hover{
         color: var(--buttonPrimary) !important;
         background: var(--loadingBottom) !important;
         border: 4px solid var(--loadingParticle) !important;
@@ -249,8 +250,7 @@
         min-height: 48px;
     }
     
-    /*This is the dumbest selector I've ever written. It's to add spacing to the 'Edit' button on world pages where the style is done inline on the element.
-    I add the radius back in the above selector, so this is to add spacing to the menu bellow or it looks bad.*/
+    /*This is the dumbest selector I've ever written. It's to add spacing to the 'Edit' button on world pages where the style is done inline on the element.*/
     .home-content .flex-column.btn-group>.btn:not(:last-child):not(.dropdown-toggle), .btn-secondary[style="border-radius: 0px;"]{
         margin-bottom: .5rem;
         border-radius: 5rem !important;
@@ -567,9 +567,6 @@
         text-overflow: ellipsis;
         padding-bottom: 0 !important;
         margin-bottom: 0;
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
     }
     
     .home-content .location-card.size-large .usercard .user-img, .location-card.size-large .usercard .user-img-16x9{
@@ -731,26 +728,9 @@
         margin: 0;
     }
     
-    @media(min-width:1900px){
-        .location-users>div {
-            grid-template-columns: repeat(3, 1fr);
-        }
-    }
-    
-    @media(max-width:1900px){
-        .location-users>div {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-    
-    @media(max-width:1500px){
-        .location-users>div {
-            grid-template-columns: repeat(1, 1fr);
-        }
-    }
-    
     .location-users>div {
         display: grid;
+        
         margin-right: 0 !important;
         margin-left: 0 !important;
     }
@@ -771,9 +751,32 @@
         border: 3px solid var(--loadingBottom);
         padding: 10px;
     }
+    
+    @media(min-width:1900px){
+        .location-users>div {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    
+    @media(max-width:1900px){
+        .location-users>div {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    
+    @media(max-width:1500px){
+        .location-users>div {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
    
 }
 
+@-moz-document url-prefix("https://vrchat.com/home/sso/") {
+    button{
+        width: 6em !important;
+    }
+}
 @-moz-document url("https://vrchat.com/home/login") {
     .col-md-4{
         max-width: 33.33333%;
