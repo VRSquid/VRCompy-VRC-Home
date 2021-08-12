@@ -2,7 +2,7 @@
 @name           VRCompy App Theme
 @namespace      https://github.com/VRSquid/VRCompy-VRC-Home
 @updateURL      https://vrsquid.github.io/VRCompy-VRC-Home/VRCompyTheme.user.css
-@version        1.0.1
+@version        1.1.1
 @description    A style which aims to fix a few issues with the VRChat home website, and theme it like my mobile app, 'VRCompy'
 @author         VRSquid
 ==/UserStyle== */
@@ -457,6 +457,10 @@
         background: linear-gradient(0deg, var(--loadingButtonBackground) 0%, var(--loadingTop) 100%);
     }
     
+    .leftbar .location-card{
+        display: none;
+    }
+    
     .leftbar .usercard .user-img-16x9, .leftbar .usercard .user-img{
         position: fixed;
         margin: 0 !important;
@@ -875,25 +879,25 @@
     }
     
     @media(min-width:2735px){
-        .location-users>div {
+        .location-card.size-large .location-users>div {
             grid-template-columns: repeat(4, 1fr);
         }
     }
     
     @media(max-width:2735px){
-        .location-users>div {
+        .location-card.size-large .location-users>div {
             grid-template-columns: repeat(3, 1fr);
         }
     }
     
     @media(max-width:1900px){
-        .location-users>div {
+        .location-card.size-large .location-users>div {
             grid-template-columns: repeat(2, 1fr);
         }
     }
     
     @media(max-width:1500px){
-        .location-users>div {
+        .location-card.size-large .location-users>div {
             grid-template-columns: repeat(1, 1fr);
         }
     }
