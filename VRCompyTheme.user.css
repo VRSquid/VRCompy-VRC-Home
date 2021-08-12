@@ -1,13 +1,12 @@
 /* ==UserStyle==
 @name           VRCompy App Theme
 @namespace      https://github.com/VRSquid/VRCompy-VRC-Home
-@updateURL      https://vrsquid.github.io/VRCompy-VRC-Home/VRCompyTheme.user.css
 @version        1.0.1
 @description    A style which aims to fix a few issues with the VRChat home website, and theme it like my mobile app, 'VRCompy'
 @author         VRSquid
 ==/UserStyle== */
 
-
+/*This is an older version with the old nav menu.*/
 
 @-moz-document url-prefix("https://vrchat.com/home/launch") {
     body {
@@ -70,7 +69,6 @@
         --OfflineSecondary: #6e6e6e;
         --labs: #2aCa5a;
         --buttonPrimary: #0e9bb1;
-        --areaOutline: #051d22;
         --loadingTop: #003d40;
         --loadingBottom: #023234;
         --loadingParticle: #104649;
@@ -97,7 +95,7 @@
     }
     
     .btn{
-        box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
     
     .btn-group-vertical{
@@ -121,18 +119,24 @@
     .btn-outline-primary{
         color: var(--buttonPrimary);
         border-radius: 5rem;
-        border: 4px solid var(--loadingButtonBackground);
-        background: var(--loadingBottom);
+        border: 4px solid var(--loadingBottom);
     }
     
     .btn-outline-primary.disabled{
         border-color:var(--loadingBottom);
     }
     
-    
-    
     .leftbar .friendRequest{
         display: none;
+    }
+    
+    .btn[title="Push Notifications"]{
+        font-size: 0;
+    }
+    
+    .btn[title="Push Notifications"] span{
+        font-size: 1.1rem;
+        margin: 0 3px;
     }
     
     .btn-warning{
@@ -204,15 +208,19 @@
     }
     
     .btn-primary.disabled, .btn-primary:disabled{
+        background: var(--loadingButtonBackground);
+        border: 4px solid var(--loadingBottom);
+        border-radius: 5rem;
+        color: var(--buttonPrimary);
+        font-weight: bold;
         opacity: 0.5;
     }
     
-    .btn-primary:not(.disabled):enabled:hover, .leftbar .btn-outline-primary:hover, .leftbar .btn-primary:hover, .navbar-header .btn-secondary[title="home"]:hover{
+    .btn-primary:not(.disabled):enabled:hover{
         color: var(--buttonPrimary) !important;
         background: var(--loadingBottom) !important;
         border: 4px solid var(--loadingParticle) !important;
     }
-    
     
     a[href="/home/uploadIcon"] .btn-secondary{
         width: 8em;
@@ -282,92 +290,38 @@
     
     .navbar .container-fluid .navbar-header{
         position: fixed;
-        top: 0px;
-        left: 0px;
+        top: 15px;
+        left: 67px;
         pointer-events: auto;
     }
-
+    
     .navbar .container-fluid .navbar-header .btn[title="logout"]{
         color: var(--BusyPrimary);
         border: 3px solid var(--BusySecondary);
-        position: fixed;
-        bottom: 5px;
-        left: 180px;
-        height: 53px;
-        padding-top: 12px;
-        font-weight: bold
-    }
-    
-    .navbar .container-fluid .navbar-header .btn[title="home"]{
-        position: fixed;
-        top: 10px;
-        left: 180px;
-        color: var(--BusyPrimary);
-        border: 4px solid var(--loadingBottom);
-        background: var(--loadingButtonBackground);
-        width: 50px;
-        height: 50px;
-        padding: 8px 9px;
-        
-    }
-
-    .navbar .container-fluid .navbar-header .btn[title="home"] span{
-        font-size: 1.3rem;
-        color: var(--buttonPrimary);
-        padding-top: 2px;
-        align-items: center;
-        text-align: center;
     }
     
     .badge{
         background-color: var(--buttonPrimary);
     } 
     
-    .leftbar .user-info{
-        background: var(--loadingButtonBackground);
-        border: 3px solid var(--loadingParticle);
-        position: fixed;
-        border-radius: 5rem;
-        padding: 5px 5px 0 5px;
-        margin: 0 10px !important;
-        width: 265px !important;
-        top: 190px;
-        left:0;
-    }
-    
-    .leftbar .user-info h6{
-        font-size: 1.5rem;
-    }
-    
-    .leftbar .user-info h6>a>span{
-        display: none;
-    }
-    
-    .leftbar .profile-link{
-        position: fixed;
-        bottom: 5px;
-        left: 5px;
-        margin: 0 !important;
+    .profile-link{
         width: 53px !important;
         height: 53px !important;
         padding: 0 !important;
-       
     }
     
-    .leftbar .profile-link > a{
+    .profile-link > a{
         font-size: 0;
         border-radius: 50%;
         height: 100%;
         padding: 5px !important;
-        background: var(--loadingButtonBackground);
-        border: 4px solid var(--loadingBottom);
     }
     
-    .leftbar .profile-link > a span{
+    .profile-link > a span{
         padding-top: 4px !important;
     }
     
-    .leftbar .profile-link > a span::before{
+    .profile-link > a span::before{
         font-size: 1.7rem;
     }
     
@@ -438,62 +392,25 @@
         display: none;
     }
     
-    .user-img-16x9, .user-img{
-        width:100px !important;
-        height:100px !important;
+    .user-img-16x9{
+        width:176px;
+        height:176px;
         border-radius: 50%;
         object-fit: cover;
     }
     
-    .leftbar nav{
-        overflow-y: auto;
-        position: absolute;
+    .card .user-img-16x9, .card .user-img{
+        width: 100px !important;
+        height: 100px !important;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    
+    .leftbar .usercard{
+        justify-content: center;
+        align-items: center;
+        text-align: center;
         width: 100%;
-        top: 270px;
-        bottom: 63px;
-        border-top: 4px solid var(--areaOutline);
-        border-bottom: 4px solid var(--areaOutline);
-        padding: 10px 0;
-        background: linear-gradient(0deg, var(--loadingButtonBackground) 0%, var(--loadingTop) 100%);
-    }
-    
-    .leftbar .usercard .user-img-16x9, .leftbar .usercard .user-img{
-        position: fixed;
-        margin: 0 !important;
-        top:10px;
-        left: 15px;
-    }
-    
-    .leftbar .lastLogin{
-        display: none;
-    }
-    
-    .leftbar .usercard.level-trusted .user-img-16x9, .leftbar .usercard.level-trusted .user-img{
-        border: 3px solid var(--level-trusted)
-    }
-    
-    .leftbar .usercard.level-known .user-img-16x9, .leftbar .usercard.level-known .user-img{
-        border: 3px solid var(--level-known)
-    }
-    
-    .leftbar .usercard.level-user .user-img-16x9, .leftbar .usercard.level-user .user-img{
-        border: 3px solid var(--level-user)
-    }
-    
-    .leftbar .usercard.level-new .user-img-16x9, .leftbar .usercard.level-new .user-img{
-        border: 3px solid var(--level-new)
-    }
-    
-    .leftbar .usercard.level-visitor .user-img-16x9, .leftbar .usercard.level-visitor .user-img{
-        border: 3px solid var(--level-visitor)
-    }
-    
-    .leftbar .usercard.moderator .user-img-16x9, .leftbar .usercard.moderator .user-img{
-        border: 3px solid var(--moderator)
-    }
-    
-    .leftbar .usercard.developer .user-img-16x9, .leftbar .usercard.developer .user-img{
-        border: 3px solid var(--developer)
     }
     
     .leftbar .usercard.state-offline{
@@ -507,71 +424,9 @@
         width: 100%;
     }
     
-    .leftbar .btn[href="/home/messages"]{
-        position: fixed;
-        top: 60px;
-        left:200px;
-        width: 65px;
-        height: 65px;
-        border-radius: 5rem !important;
-        padding: 10px 0;
-        font-size: 1.8rem;
-    }
-    
-    .leftbar .btn[href="/home/messages"] .badge{
-        position: absolute;
-        top: -7px;
-        right: -7px;
-        width: 25px;
-        height: 25px;
-        font-size: .85rem;
-        margin: auto !important;
-        padding: 3px 0;
-        border-radius: 5rem;       
-        align-items: center;
-        line-height: unset;
-    }
-    
-    .btn[title="Push Notifications"]{
-        position: fixed;
-        top: 130px;;
-        left: 180px;
-        border-radius: 5rem !important;
-        width: 50px;
-        height: 50px;
-        font-size: 0;
-    }
-    
-    .btn[title="Push Notifications"] span{
-        font-size: 1.1rem;
-        margin: 0;
-    }
-    
-    .home-content .location-card.size-large .usercard .user-info{
-        vertical-align: middle;
-        display: table-cell;
-    }
-    
-    .home-content .location-card.size-large .usercard .lastLogin{
-        display: none;
-    }
-    
-    .home-content .location-card.size-large .usercard{
-        padding: 0 !important;
-    }
-    
-    .usercard{
-        padding: 20px !important;
-    }
-    
-    .leftbar .usercard{
-        text-align: center;
-        
-    }
-    
     .leftbar .card .user-img-16x9, .leftbar .card .user-img{
-        width: 170px !important;
-        height: 170px !important;
+        width: 150px !important;
+        height: 150px !important;
         border-radius: 50%;
         object-fit: cover;
         margin-bottom: 15px !important;
@@ -601,6 +456,17 @@
         width: 70px !important;
         height: 70px !important;
         margin-left: 115px;
+    }
+    
+    
+    
+    .usercard{
+        padding: 20px !important;
+    }
+    
+    .leftbar .usercard{
+        text-align: center;
+        
     }
     
     .leftbar .usercard .statusDescription > small{
@@ -639,8 +505,7 @@
     
     .leftbar{
         background: linear-gradient(130deg, var(--loadingButtonBackground) 10%, var(--loadingParticle) 100%, var(--loadingTop) 100%) !important; 
-        padding: 0 !important;
-        padding-top: 180px !important;
+        padding-top: 75px !important;
         min-width: 290px;
         width:290px;
         box-shadow: 5px 0px 20px 20px rgba(0,0,0,0.1) !important;
@@ -707,6 +572,19 @@
     .home-content .location-card.size-large .usercard .user-img, .location-card.size-large .usercard .user-img-16x9{
         width: 50px !important;
         height: 50px !important;
+    }
+    
+    .home-content .location-card.size-large .usercard .user-info{
+        vertical-align: middle;
+        display: table-cell;
+    }
+    
+    .home-content .location-card.size-large .usercard .lastLogin{
+        display: none;
+    }
+    
+    .home-content .location-card.size-large .usercard{
+        padding: 0 !important;
     }
     
     .home-content .location-card.size-large{
