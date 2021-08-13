@@ -2,7 +2,7 @@
 @name           VRCompy App Theme
 @namespace      https://github.com/VRSquid/VRCompy-VRC-Home
 @updateURL      https://vrsquid.github.io/VRCompy-VRC-Home/VRCompyTheme.user.css
-@version        1.1.1
+@version        1.1.2
 @description    A style which aims to fix a few issues with the VRChat home website, and theme it like my mobile app, 'VRCompy'
 @author         VRSquid
 ==/UserStyle== */
@@ -207,7 +207,8 @@
         opacity: 0.5;
     }
     
-    .btn-primary:not(.disabled):enabled:hover, .leftbar .btn-outline-primary:hover, .leftbar .btn-primary:hover, .navbar-header .btn-secondary[title="home"]:hover{
+    /*password button is enabled and disabled diffeently from other buttons for some reason so I have to get weird with styles or else this don't overide properly.*/
+    .btn-primary:not(.disabled):not(#password-change-submit):hover, #password-change-submit:enabled:hover, .leftbar .btn-outline-primary:hover, .leftbar .btn-primary:hover, .navbar-header .btn-secondary[title="home"]:hover{
         color: var(--buttonPrimary) !important;
         background: var(--loadingBottom) !important;
         border: 4px solid var(--loadingParticle) !important;
@@ -513,7 +514,7 @@
     
     .leftbar .btn[href="/home/messages"]{
         position: fixed;
-        top: 60px;
+        top: 62px;
         left:200px;
         width: 65px;
         height: 65px;
