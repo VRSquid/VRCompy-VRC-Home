@@ -2,7 +2,7 @@
 @name           VRCompy App Theme
 @namespace      https://github.com/VRSquid/VRCompy-VRC-Home
 @updateURL      https://vrsquid.github.io/VRCompy-VRC-Home/VRCompyTheme.user.css
-@version        1.2.0
+@version        1.2.1
 @description    A style which aims to fix a few issues with the VRChat home website, and theme it like my mobile app, 'VRCompy'
 @author         VRSquid
 ==/UserStyle== */
@@ -79,6 +79,11 @@
         
         background: var(--loadingButtonBackground3) !important;
         overflow: hidden;
+    }
+    
+    .container>.col-md-4.offset-md-4{
+        max-width: 500px !important;
+        margin: auto;
     }
     
     .img-rounded{
@@ -552,6 +557,7 @@
     
     .home-content .location-card.size-large .usercard{
         padding: 0 !important;
+        opacity: 1;
     }
     
     .usercard{
@@ -891,16 +897,16 @@
 }
 
 @-moz-document url-prefix("https://vrchat.com/home/user/") {
-    .home-content>div>div>.mb-4:nth-child(1){
+    .home-content>div>div>.mb-4.row{
         text-align: center !important;
         margin-bottom: 0 !important;
     }
     
-    .home-content>div>div>div:nth-child(3){
+    .home-content>div>div>.row:not(.mb-4):not(.higher-element){
         margin-top: 310px !important;
     }
     
-    .home-content>div>div>.mb-4:nth-child(2)>div:nth-child(1){
+    .home-content>div>div>.mb-4.higher-element.row>.col-md-9{
         position: relative;
         top: 0px;
         left: 50%;
@@ -908,7 +914,7 @@
         padding: 0;
     }
     
-    .home-content>div>div>.mb-4:nth-child(2)>div:nth-child(2){
+    .home-content>div>div>.mb-4.higher-element.row>.col-md-3{
         position: absolute;
         top: 0;
         left: calc(50% + 165px);
@@ -918,11 +924,11 @@
         max-width: none;
     }
     
-    .home-content>div>div>.mb-4:nth-child(2)>div:nth-child(1) .row {
+    .home-content>div>div>.mb-4.higher-element.row>.col-md-9 .row {
         flex-direction: column;
     }
     
-    .home-content>div>div>.mb-4:nth-child(2)>div:nth-child(1) .usercard .user-img-16x9, .home-content>div>div>.mb-4:nth-child(2)>div:nth-child(1) .usercard .user-img{
+    .home-content>div>div>.mb-4.higher-element.row>.col-md-9 .usercard .user-img-16x9, .home-content>div>div>.mb-4.higher-element.row>.col-md-9 .usercard .user-img{
         position: absolute;
         margin-top: -310px;
         left: 50%;
@@ -930,7 +936,7 @@
         z-index: 10;
     }
     
-    .home-content>div>div>.mb-4:nth-child(2)>div:nth-child(1) .usercard .user-img-16x9{
+    .home-content>div>div>.mb-4.higher-element.row>.col-md-9 .usercard .user-img-16x9{
         left: calc(50% + 5px);
     }
     
@@ -1333,10 +1339,5 @@
 @-moz-document url-prefix("https://vrchat.com/home/sso/") {
     button{
         width: 6em !important;
-    }
-}
-@-moz-document url("https://vrchat.com/home/login") {
-    .col-md-4{
-        max-width: 33.33333%;
     }
 }
