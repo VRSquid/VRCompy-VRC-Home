@@ -2,7 +2,7 @@
 @name           VRCompy App Theme
 @namespace      https://github.com/VRSquid/VRCompy-VRC-Home
 @updateURL      https://vrsquid.github.io/VRCompy-VRC-Home/VRCompyTheme.user.css
-@version        1.2.1
+@version        1.2.2
 @description    A style which aims to fix a few issues with the VRChat home website, and theme it like my mobile app, 'VRCompy'
 @author         VRSquid
 ==/UserStyle== */
@@ -181,6 +181,15 @@
         color: var(--buttonPrimary);
     }
     
+    .search .navbar-form .row{
+        flex-wrap: nowrap;        
+    }
+    
+    .search .navbar-form .row .col-9{
+        flex: auto;
+        max-width: none;        
+    }
+    
     .search .form-control[type="text"]{
         min-height: 44px;
         border-top-left-radius: 5rem;
@@ -206,7 +215,7 @@
         opacity: 0.5;
     }
     
-    /*password button is enabled and disabled diffeently from other buttons for some reason so I have to get weird with styles or else this don't overide properly.*/
+    /*password button is enabled and disabled diffeently from other buttons for some reason so I have to get weird with styles or else this won't overide properly.*/
     .btn-primary:not(.disabled):not(#password-change-submit):hover, #password-change-submit:enabled:hover, .leftbar .btn-outline-primary:hover, .leftbar .btn-primary:hover, .navbar-header .btn-secondary[title="home"]:hover{
         color: var(--buttonPrimary) !important;
         background: var(--loadingBottom) !important;
@@ -546,16 +555,16 @@
         margin: 0;
     }
     
-    .home-content .location-card.size-large .usercard .user-info{
+    .home-content .location-card .usercard .user-info{
         vertical-align: middle;
         display: table-cell;
     }
     
-    .home-content .location-card.size-large .usercard .lastLogin{
+    .home-content .location-card .usercard .lastLogin{
         display: none;
     }
     
-    .home-content .location-card.size-large .usercard{
+    .home-content .location-card .usercard{
         padding: 0 !important;
         opacity: 1;
     }
@@ -700,12 +709,17 @@
         margin-bottom: 0;
     }
     
-    .home-content .location-card.size-large .usercard .user-img, .location-card.size-large .usercard .user-img-16x9{
+    .home-content .location-card .usercard .user-img, .location-card .usercard .user-img-16x9{
         width: 50px !important;
         height: 50px !important;
+        margin-left: 5px !important;
     }
     
-    .home-content .location-card.size-large{
+    .home-content .location-card.size-medium .location-users{
+        margin-top: 5px;
+    }
+    
+    .home-content .location-card{
         padding: 5px 10px 0 10px !important;
     }
     
@@ -874,17 +888,29 @@
         .location-card.size-large .location-users>div {
             grid-template-columns: repeat(4, 1fr);
         }
+        
+        .location-card.size-medium .location-users>div {
+            grid-template-columns: repeat(3, 1fr);
+        }
     }
     
     @media(max-width:2735px){
         .location-card.size-large .location-users>div {
             grid-template-columns: repeat(3, 1fr);
         }
+        
+        .location-card.size-medium .location-users>div {
+            grid-template-columns: repeat(2, 1fr);
+        }
     }
     
     @media(max-width:1900px){
         .location-card.size-large .location-users>div {
             grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .location-card.size-medium .location-users>div {
+            grid-template-columns: repeat(1, 1fr);
         }
     }
     
