@@ -2,7 +2,7 @@
 @name           VRCompy App Theme
 @namespace      https://github.com/VRSquid/VRCompy-VRC-Home
 @updateURL      https://vrsquid.github.io/VRCompy-VRC-Home/VRCompyTheme.user.css
-@version        1.2.3
+@version        1.2.4
 @description    A style which aims to fix a few issues with the VRChat home website, and theme it like my mobile app, 'VRCompy'
 @author         VRSquid
 ==/UserStyle== */
@@ -719,7 +719,7 @@
     }
     
     .home-content .location-card{
-        padding: 5px 10px 0 10px !important;
+        padding: 5px 10px !important;
     }
     
     .location-card .user-img, .location-container .user-img-16x9{
