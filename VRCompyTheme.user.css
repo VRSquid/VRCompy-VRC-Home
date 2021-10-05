@@ -727,29 +727,31 @@
         margin-top: 4.8px !important;
     }
     
-    .friend-container{
+    .friend-search-container {
         width: 100% !important;
+        background: transparent !important;
+        box-shadow: unset !important;
     }
     
-    .friend-container > h3{
+    .friend-search-container > h3{
         /*position: fixed;*/
         padding: 5px;
         
     }
     
-    .friend-container > div:first-of-type{
+    .friend-search-container > div:first-of-type{
         /*position: fixed;*/
         border-radius: 5rem !important;
         padding: 0 5px;
     }
     
-    .friend-container > div > input{
+    .friend-search-container > div > input{
         border-radius: 5rem;
         border: 0;
         padding: 0 10px;
     }
     
-    .friend-container > div > hr{
+    .friend-search-container > div > hr{
         margin: 10px 0;
     }
     
